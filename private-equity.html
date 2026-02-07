@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Equity Fund - Mc Millen World</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0E2A47;
+            --navy-light: #1e3a5f;
+            --gold: #C4A962;
+            --gold-muted: #d4c49a;
+            --red: #8B0000;
+            --text: #1a1a1a;
+            --text-secondary: #5a6a7a;
+            --bg: #ffffff;
+            --bg-alt: #f7f9fb;
+            --border: #e8eef3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ═══════════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════════ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 4%;
+            z-index: 100;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            height: 45px;
+        }
+
+        .nav-logo span {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--navy);
+            letter-spacing: -0.3px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .lang-switch {
+            display: flex;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .lang-switch button {
+            background: transparent;
+            border: none;
+            padding: 6px 14px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .lang-switch button.active {
+            background: var(--navy);
+            color: white;
+        }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: var(--navy);
+            color: white;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .nav-back:hover {
+            background: var(--navy-light);
+        }
+
+        /* ═══════════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════════ */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(160deg, var(--navy) 0%, #0a1a2e 100%);
+            padding: 80px 4% 70px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(196, 169, 98, 0.08) 0%, transparent 60%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 300;
+            color: white;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+        }
+
+        /* ═══════════════════════════════════════════
+       MAIN CONTENT
+       ═══════════════════════════════════════════ */
+        .main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 4%;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 20px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .section h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 20px;
+            letter-spacing: -0.3px;
+        }
+
+        /* Definition Box */
+        .definition-box {
+            background: var(--bg-alt);
+            border-left: 3px solid var(--navy);
+            padding: 24px 28px;
+            margin-bottom: 30px;
+        }
+
+        .definition-box p {
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* Card */
+        .card {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--gold-muted);
+            box-shadow: 0 8px 30px rgba(14, 42, 71, 0.06);
+        }
+
+        .card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Numbered Card */
+        .card-numbered {
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .card-numbered::before {
+            content: attr(data-num);
+            position: absolute;
+            left: 20px;
+            top: 28px;
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--gold);
+        }
+
+        /* List */
+        .card ul {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .card li {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            padding: 8px 0;
+            padding-left: 16px;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card li:last-child {
+            border-bottom: none;
+        }
+
+        .card li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 4px;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        /* Phase Cards */
+        .phase-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+
+        .phase-card {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 24px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .phase-card:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold);
+            font-size: 1.2rem;
+            z-index: 1;
+        }
+
+        .phase-num {
+            width: 32px;
+            height: 32px;
+            background: var(--navy);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 0 auto 12px;
+        }
+
+        .phase-card h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .phase-card p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Warning */
+        .warning {
+            background: #fef8f8;
+            border: 1px solid #f5e0e0;
+            border-left: 3px solid var(--red);
+            padding: 20px 24px;
+            margin-bottom: 24px;
+        }
+
+        .warning p {
+            color: #5a3030;
+            font-size: 0.9rem;
+        }
+
+        /* Footer CTA */
+        .footer-cta {
+            background: var(--navy);
+            padding: 60px 4%;
+            text-align: center;
+        }
+
+        .footer-cta h3 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .footer-cta p {
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 550px;
+            margin: 0 auto 24px;
+            font-size: 0.9rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 12px 32px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+
+        .cta-btn:hover {
+            background: white;
+        }
+
+        /* Language Toggle */
+        .lang-zh .en {
+            display: none !important;
+        }
+
+        body:not(.lang-zh) .zh {
+            display: none !important;
+        }
+
+        .nav-login {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background: transparent;
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid var(--navy);
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .nav-login:hover {
+            background: var(--navy);
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .phase-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .phase-card::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .phase-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-logo span {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">
+            <img src="assets/logo-blue.jpg" alt="Mc Millen">
+            <span>Mc Millen World</span>
+        </a>
+        <div class="nav-right">
+            <div class="lang-switch">
+                <button class="active" onclick="setLang('en')">EN</button>
+                <button onclick="setLang('zh')">中文</button>
+            </div>
+            <a href="index.html" class="nav-back">
+                <span class="en">← Back</span>
+                <span class="zh">← 返回</span>
+            </a>
+            <a href="https://www.mcmillen.world" class="nav-login" id="memberLoginBtn" target="_blank">
+                <span class="en">Member Login</span>
+                <span class="zh">会员登入</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="en">Private Equity Fund</h1>
+            <h1 class="zh">私募基金</h1>
+            <p class="en">Investment logic, characteristics, operational framework, and selection criteria for
+                sophisticated investors.</p>
+            <p class="zh">面向专业投资者的投资逻辑、基金特点、运作模式及选择标准。</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <!-- Definition -->
+        <section class="section">
+            <div class="section-label en">Definition</div>
+            <div class="section-label zh">定义</div>
+            <h2 class="en">What is Private Equity?</h2>
+            <h2 class="zh">什么是私募基金？</h2>
+
+            <div class="definition-box">
+                <p class="en">Private equity funds are non-publicly offered investment vehicles targeting high-net-worth
+                    individuals and institutional investors. They offer high flexibility and return potential but carry
+                    elevated risks. With proper risk management, PE funds represent a premium wealth management tool.
+                </p>
+                <p class="zh">私募基金是一种非公开募集的投资基金，主要面向高净值人群或机构投资者，具有较高的灵活性和潜在收益。有良好的风险管理，私募基金是一项优质的理财产品。</p>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h3 class="en">Non-Public Offering</h3>
+                    <h3 class="zh">非公开募集</h3>
+                    <p class="en">Raised through private negotiation with qualified investors, without public
+                        advertising.</p>
+                    <p class="zh">通过私下协商方式向特定合格投资者募集资金，不通过公开渠道宣传。</p>
+                </div>
+                <div class="card">
+                    <h3 class="en">High Entry Threshold</h3>
+                    <h3 class="zh">投资门槛高</h3>
+                    <p class="en">Investors must demonstrate significant capital and risk tolerance capacity.</p>
+                    <p class="zh">通常要求投资者具备较高的风险承受能力和资金实力。</p>
+                </div>
+                <div class="card">
+                    <h3 class="en">Flexible Oversight</h3>
+                    <h3 class="zh">监管相对宽松</h3>
+                    <p class="en">Fewer disclosure requirements, allowing for more flexible investment strategies.</p>
+                    <p class="zh">相比公募基金，信息披露要求较低，策略更灵活。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Types -->
+        <section class="section">
+            <div class="section-label en">Classification</div>
+            <div class="section-label zh">分类</div>
+            <h2 class="en">Primary Types</h2>
+            <h2 class="zh">主要类型</h2>
+
+            <div class="grid">
+                <div class="card card-numbered" data-num="01">
+                    <h3>Private Equity (PE)</h3>
+                    <p class="en">Investing in mature companies for expansion or buyouts.</p>
+                    <p class="zh">私募股权基金，主要投资成长期或成熟期企业。</p>
+                </div>
+                <div class="card card-numbered" data-num="02">
+                    <h3>Venture Capital (VC)</h3>
+                    <p class="en">Focusing on early-stage startups with high growth potential.</p>
+                    <p class="zh">创业投资基金，侧重早中期初创企业。</p>
+                </div>
+                <div class="card card-numbered" data-num="03">
+                    <h3>Hedge Funds</h3>
+                    <p class="en">Using long/short and arbitrage strategies to generate alpha.</p>
+                    <p class="zh">对冲基金，通过多种策略获取超额收益。</p>
+                </div>
+                <div class="card card-numbered" data-num="04">
+                    <h3>Trade Funds</h3>
+                    <p class="en">Quantitative and systematic trading in liquid markets.</p>
+                    <p class="zh">交易基金，量化和系统化交易。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Characteristics -->
+        <section class="section">
+            <div class="section-label en">Features</div>
+            <div class="section-label zh">特点</div>
+            <h2 class="en">Key Characteristics</h2>
+            <h2 class="zh">主要特点</h2>
+
+            <div class="grid">
+                <div class="card">
+                    <h3 class="en">High Return Potential</h3>
+                    <h3 class="zh">高收益潜力</h3>
+                    <p class="en">Through leverage and niche strategies, PE funds can achieve above-market returns.</p>
+                    <p class="zh">通过杠杆、长期持有或特殊策略获取超额收益。</p>
+                </div>
+                <div class="card">
+                    <h3 class="en">Low Liquidity</h3>
+                    <h3 class="zh">低流动性</h3>
+                    <p class="en">Lock-up periods of 1-5 years. Investors cannot redeem during this period.</p>
+                    <p class="zh">锁定期通常1-5年，期间无法赎回。</p>
+                </div>
+                <div class="card">
+                    <h3 class="en">Fee Structure</h3>
+                    <h3 class="zh">费用结构</h3>
+                    <p class="en">Management fee (1-2%) + Carried interest (20% of profits).</p>
+                    <p class="zh">管理费(1-2%) + 业绩提成(收益的20%)。</p>
+                </div>
+                <div class="card">
+                    <h3 class="en">Confidentiality</h3>
+                    <h3 class="zh">信息保密</h3>
+                    <p class="en">No public disclosure of holdings or strategies.</p>
+                    <p class="zh">无需公开持仓，策略保密性强。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Operational Framework -->
+        <section class="section">
+            <div class="section-label en">Process</div>
+            <div class="section-label zh">流程</div>
+            <h2 class="en">Operational Framework</h2>
+            <h2 class="zh">运作模式</h2>
+
+            <div class="phase-grid">
+                <div class="phase-card">
+                    <div class="phase-num">1</div>
+                    <h4 class="en">Fundraising</h4>
+                    <h4 class="zh">募集</h4>
+                    <p class="en">Investor verification, GP/LP structure</p>
+                    <p class="zh">合格投资者认证，GP/LP结构</p>
+                </div>
+                <div class="phase-card">
+                    <div class="phase-num">2</div>
+                    <h4 class="en">Investment</h4>
+                    <h4 class="zh">投资</h4>
+                    <p class="en">Due diligence, valuation, negotiation</p>
+                    <p class="zh">尽调、估值、谈判</p>
+                </div>
+                <div class="phase-card">
+                    <div class="phase-num">3</div>
+                    <h4 class="en">Management</h4>
+                    <h4 class="zh">管理</h4>
+                    <p class="en">Post-investment oversight, monitoring</p>
+                    <p class="zh">投后管理、风险监控</p>
+                </div>
+                <div class="phase-card">
+                    <div class="phase-num">4</div>
+                    <h4 class="en">Exit</h4>
+                    <h4 class="zh">退出</h4>
+                    <p class="en">IPO, M&A, buybacks, S-funds</p>
+                    <p class="zh">IPO、并购、回购、S基金</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Risks -->
+        <section class="section">
+            <div class="section-label en">Caution</div>
+            <div class="section-label zh">注意</div>
+            <h2 class="en">Risks & Challenges</h2>
+            <h2 class="zh">风险与挑战</h2>
+
+            <div class="warning">
+                <p class="en"><strong>Important:</strong> PE funds are high-risk, high-reward instruments. Investors
+                    must fully understand the risks before committing capital.</p>
+                <p class="zh"><strong>重要提示：</strong>私募基金是高风险高收益的投资工具，投资者必须充分了解风险。</p>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h3 class="en">Market Risk</h3>
+                    <h3 class="zh">市场风险</h3>
+                    <p class="en">Economic cycles and sector volatility impact returns.</p>
+                    <p class="zh">经济周期、行业波动影响投资回报。</p>
+                </div>
+                <div class="card">
+                    <h3 class="en">Liquidity Risk</h3>
+                    <h3 class="zh">流动性风险</h3>
+                    <p class="en">Capital locked during investment period.</p>
+                    <p class="zh">资金锁定周期长，紧急情况难以退出。</p>
+                </div>
+                <div class="card">
+                    <h3 class="en">Managerial Risk</h3>
+                    <h3 class="zh">管理风险</h3>
+                    <p class="en">Reliance on fund manager expertise.</p>
+                    <p class="zh">依赖基金经理能力与职业道德。</p>
+                </div>
+                <div class="card">
+                    <h3 class="en">Regulatory Risk</h3>
+                    <h3 class="zh">政策风险</h3>
+                    <p class="en">Changing compliance landscapes.</p>
+                    <p class="zh">监管变化可能限制运作模式。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selection -->
+        <section class="section">
+            <div class="section-label en">Selection</div>
+            <div class="section-label zh">选择</div>
+            <h2 class="en">How to Select a PE Fund</h2>
+            <h2 class="zh">如何选择私募基金？</h2>
+
+            <div class="grid">
+                <div class="card card-numbered" data-num="01">
+                    <h3 class="en">Track Record</h3>
+                    <h3 class="zh">历史业绩</h3>
+                    <p class="en">Review IRR, drawdowns, and Sharpe ratio.</p>
+                    <p class="zh">回报率、回撤、夏普比率等指标。</p>
+                </div>
+                <div class="card card-numbered" data-num="02">
+                    <h3 class="en">Team Expertise</h3>
+                    <h3 class="zh">团队背景</h3>
+                    <p class="en">Manager industry experience and success rate.</p>
+                    <p class="zh">管理人行业经验、过往项目成功率。</p>
+                </div>
+                <div class="card card-numbered" data-num="03">
+                    <h3 class="en">Strategy Alignment</h3>
+                    <h3 class="zh">策略匹配</h3>
+                    <p class="en">Match with your risk tolerance and goals.</p>
+                    <p class="zh">是否与自身风险偏好、投资目标一致。</p>
+                </div>
+                <div class="card card-numbered" data-num="04">
+                    <h3 class="en">Compliance Status</h3>
+                    <h3 class="zh">合规性</h3>
+                    <p class="en">Verify regulatory filings and history.</p>
+                    <p class="zh">是否完成备案，是否存在违规记录。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="footer-cta">
+        <h3 class="en">Ready to Explore Investment Opportunities?</h3>
+        <h3 class="zh">准备好探索投资机会了吗？</h3>
+        <p class="en">Connect with our professional team to discuss your investment objectives.</p>
+        <p class="zh">联系我们的专业团队，讨论您的投资目标。</p>
+        <a href="contact.html" class="cta-btn">
+            <span class="en">Contact Us →</span>
+            <span class="zh">联系我们 →</span>
+        </a>
+    </section>
+
+    <script>
+        function setLang(lang) {
+            if (lang === 'zh') {
+                document.body.classList.add('lang-zh');
+            } else {
+                document.body.classList.remove('lang-zh');
+            }
+            document.querySelectorAll('.lang-switch button').forEach((btn, i) => {
+                btn.classList.toggle('active', (lang === 'en' && i === 0) || (lang === 'zh' && i === 1));
+            });
+            localStorage.setItem('mcmillen-lang', lang);
+        }
+        const savedLang = localStorage.getItem('mcmillen-lang') || 'en';
+        setLang(savedLang);
+    </script>
+</body>
+
+</html>

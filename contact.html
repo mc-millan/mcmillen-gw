@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Inquiry - Mc Millen World</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0E2A47;
+            --navy-light: #1e3a5f;
+            --gold: #C4A962;
+            --text: #1a1a1a;
+            --text-secondary: #5a6a7a;
+            --bg: #ffffff;
+            --bg-alt: #f7f9fb;
+            --border: #e8eef3;
+            --swiss-red: #E60000;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            height: 48px;
+        }
+
+        .nav-logo span {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--navy);
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .nav-back:hover {
+            background: var(--navy-light);
+            transform: translateX(-4px);
+        }
+
+        /* Layout */
+        .main {
+            padding-top: 140px;
+            padding-bottom: 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        /* Info Section */
+        .info-side {
+            padding-top: 20px;
+        }
+
+        .label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-weight: 300;
+            color: var(--navy);
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .detail-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .icon-box {
+            width: 44px;
+            height: 44px;
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy);
+            flex-shrink: 0;
+        }
+
+        .detail-text h3 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .detail-text p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        /* Form Section */
+        .form-side {
+            background: var(--bg-alt);
+            padding: 50px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 40px rgba(14, 42, 71, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 16px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--text);
+            transition: var(--transition);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--navy);
+            box-shadow: 0 0 0 4px rgba(14, 42, 71, 0.05);
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--navy);
+            color: white;
+            border: none;
+            padding: 18px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover {
+            background: var(--navy-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(14, 42, 71, 0.15);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Language Toggle in Nav */
+        .lang-btn {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            color: var(--navy);
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .lang-btn:hover {
+            background: #eef2f6;
+        }
+
+        /* Bilingual Visibility */
+        .zh {
+            display: none;
+        }
+
+        body.lang-zh .en {
+            display: none;
+        }
+
+        body.lang-zh .zh {
+            display: block;
+        }
+
+        body.lang-zh .en-inline {
+            display: none;
+        }
+
+        body.lang-zh .zh-inline {
+            display: inline;
+        }
+
+        .en-inline {
+            display: inline;
+        }
+
+        .zh-inline {
+            display: none;
+        }
+
+        .nav-login {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: transparent;
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--navy);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .nav-login:hover {
+            background: var(--navy);
+            color: white;
+        }
+
+        /* Mobile */
+        @media (max-width: 991px) {
+            .main {
+                grid-template-columns: 1fr;
+                gap: 60px;
+                padding-top: 120px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav {
+                padding: 0 20px;
+            }
+
+            .nav-logo span {
+                display: none;
+            }
+
+            .form-side {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">
+            <img src="assets/logo-blue.jpg" alt="Mc Millen">
+            <span>Mc Millen World</span>
+        </a>
+        <div class="nav-right">
+            <button class="lang-btn" id="langToggle">
+                <span class="en">中文</span>
+                <span class="zh">English</span>
+            </button>
+            <a href="index.html" class="nav-back">
+                <span class="en">← Back</span>
+                <span class="zh">← 返回</span>
+            </a>
+            <a href="https://www.mcmillen.world" class="nav-login" id="memberLoginBtn" target="_blank">
+                <span class="en">Member Login</span>
+                <span class="zh">会员登入</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="main">
+        <!-- Info Side -->
+        <section class="info-side">
+            <span class="label en">Inquiries</span>
+            <span class="label zh">提交咨询</span>
+
+            <h1 class="en">Professional Inquiry</h1>
+            <h1 class="zh">专业咨询服务</h1>
+
+            <p class="intro en">
+                Complete the form and our professional team will connect with you to discuss tailored financial
+                solutions for your institutional or individual needs.
+            </p>
+            <p class="intro zh">
+                请填写下方表格，我们的专业团队将尽快联络您，为您量身定制符合机构或个人需求的金融解决方案。
+            </p>
+
+            <div class="contact-details">
+                <div class="detail-item">
+                    <div class="icon-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                    </div>
+                    <div class="detail-text">
+                        <h3 class="en">Official Email</h3>
+                        <h3 class="zh">官方邮箱</h3>
+                        <p>mcmillenadmin@163.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Side -->
+        <section class="form-side">
+            <form id="contactForm">
+                <input type="hidden" name="access_key" value="d7215549-2266-4f18-9747-ffe8150dd1bb">
+                <input type="hidden" name="subject" value="New Inquiry from redesigned Contact Page">
+                <input type="hidden" name="from_name" value="Mc Millen World Contact">
+
+                <div class="form-group">
+                    <label class="form-label en">Inquirer Name</label>
+                    <label class="form-label zh">咨询人姓名</label>
+                    <input type="text" name="name" class="form-input" required placeholder="Full Name">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label en">Official Email</label>
+                    <label class="form-label zh">官方联系邮箱</label>
+                    <input type="email" name="email" class="form-input" required placeholder="email@institution.com">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label en">Inquiry Details</label>
+                    <label class="form-label zh">咨询详细内容</label>
+                    <textarea name="message" class="form-textarea" required
+                        placeholder="Please describe your requirements..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="en-inline">Submit Inquiry</span>
+                    <span class="zh-inline">提交咨询内容</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // Language Management
+        const body = document.body;
+        const langToggle = document.getElementById('langToggle');
+
+        function updateLang(lang) {
+            if (lang === 'zh') {
+                body.classList.add('lang-zh');
+            } else {
+                body.classList.remove('lang-zh');
+            }
+            localStorage.setItem('mcmillen-lang', lang);
+        }
+
+        // Initialize language
+        const savedLang = localStorage.getItem('mcmillen-lang') || 'en';
+        updateLang(savedLang);
+
+        langToggle.addEventListener('click', () => {
+            const currentLang = body.classList.contains('lang-zh') ? 'en' : 'zh';
+            updateLang(currentLang);
+        });
+
+        // Form Submission Logic
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            const isZh = body.classList.contains('lang-zh');
+
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.7';
+
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+                .then(async (response) => {
+                    let resJson = await response.json();
+                    if (response.status == 200) {
+                        alert(isZh ? '感谢您的咨询，我们的团队将尽快与您联系。' : 'Thank you for your inquiry. Our team will contact you shortly.');
+                        form.reset();
+                    } else {
+                        alert(resJson.message);
+                    }
+                })
+                .catch(error => {
+                    alert(isZh ? "提交失败，请重试。" : "Submission failed, please try again.");
+                })
+                .then(function () {
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                });
+        });
+    </script>
+</body>
+
+</html>

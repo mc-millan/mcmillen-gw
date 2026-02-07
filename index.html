@@ -1,0 +1,2356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Mc Millen World is the independent financial platform of Mc Millen Group, dedicated to delivering professional, resilient, and forward-looking financial solutions.">
+  <title>Mc Millen World - Professional Finance. Smarter Wealth.</title>
+
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ============================================
+           CSS Variables
+           ============================================ */
+    :root {
+      --mcmillen-navy: #1e3a5f;
+      --swiss-blue: #003868;
+      --swiss-red: #E60000;
+      --gold-accent: #C0B283;
+      --text-dark: #1C1C1C;
+      --text-muted: #666666;
+      --text-light: #FFFFFF;
+      --bg-white: #FFFFFF;
+      --bg-pearl: #F5F5F5;
+      --bg-dark: #0a1628;
+      --glass-bg: rgba(255, 255, 255, 0.9);
+      --glass-blur: 12px;
+      --nav-height: 80px;
+      --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      --shadow-soft: 0 4px 30px rgba(0, 0, 0, 0.05);
+      --shadow-strong: 0 20px 60px rgba(0, 56, 104, 0.12);
+    }
+
+    /* Reset */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: var(--bg-white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-smooth);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      width: 100%;
+    }
+
+    .section {
+      padding: 6rem 0;
+    }
+
+    .section--pearl {
+      background-color: var(--bg-pearl);
+    }
+
+    .section--dark {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+    }
+
+    /* Typography */
+    h1,
+    h2,
+    h3 {
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .eyebrow {
+      display: block;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--swiss-blue);
+      margin-bottom: 1rem;
+    }
+
+    .eyebrow--light {
+      color: rgba(255, 255, 255, 0.7);
+      border-left: 2px solid var(--swiss-red);
+      padding-left: 15px;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 700px;
+    }
+
+
+    /* ============================================
+           Navigation
+           ============================================ */
+    .nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: #ffffff;
+      transition: var(--transition-smooth);
+      border-bottom: 1px solid #e8eef3;
+    }
+
+    .nav.scrolled {
+      background: #ffffff;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+      border-bottom: 1px solid #e8eef3;
+    }
+
+    .nav__container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: var(--nav-height);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav__logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav__logo img {
+      height: 80px;
+      width: auto;
+    }
+
+    .nav__logo-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--mcmillen-navy);
+      letter-spacing: -0.5px;
+      transition: var(--transition-smooth);
+      white-space: nowrap;
+    }
+
+    .nav__logo-text span {
+      font-weight: 300;
+    }
+
+    .nav__links {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    .nav__links a {
+      color: var(--mcmillen-navy);
+      font-size: 0.75rem;
+      font-weight: 600;
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .nav__links a:hover {
+      color: var(--swiss-blue);
+    }
+
+    .nav__links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--swiss-red);
+      transition: width 0.3s ease;
+    }
+
+    .nav__links a:hover::after {
+      width: 100%;
+    }
+
+    .nav__actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+
+    /* Language Dropdown */
+    .lang-dropdown {
+      position: relative;
+    }
+
+    .lang-btn {
+      background: #f7f9fb;
+      border: 1px solid #e8eef3;
+      color: var(--mcmillen-navy);
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 4px;
+      transition: var(--transition-smooth);
+    }
+
+    .lang-btn:hover {
+      background: #eef2f6;
+      border-color: #d0d9e3;
+    }
+
+    .lang-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 8px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      min-width: 150px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: var(--transition-smooth);
+      overflow: hidden;
+    }
+
+    .lang-dropdown:hover .lang-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .lang-dropdown-menu a {
+      display: block;
+      padding: 0.8rem 1.2rem;
+      color: var(--text-dark);
+      font-size: 0.9rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .lang-dropdown-menu a:last-child {
+      border-bottom: none;
+    }
+
+    .lang-dropdown-menu a:hover {
+      background: var(--bg-pearl);
+    }
+
+    .lang-dropdown-menu a.active {
+      color: var(--mcmillen-navy);
+      font-weight: 600;
+    }
+
+    /* Contact Button */
+    .nav__contact {
+      position: relative;
+      overflow: hidden;
+      background: var(--mcmillen-navy);
+      border: 1px solid var(--mcmillen-navy);
+      color: #ffffff;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 4px;
+      transition: var(--transition-smooth);
+    }
+
+    .nav__contact:hover {
+      background: var(--swiss-blue);
+      border-color: var(--swiss-blue);
+    }
+
+    /* Member Login Button */
+    .nav__login {
+      position: relative;
+      overflow: hidden;
+      background: transparent;
+      border: 1px solid var(--mcmillen-navy);
+      color: var(--mcmillen-navy);
+      padding: 0.6rem 1.2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 4px;
+      transition: var(--transition-smooth);
+    }
+
+    .nav__login:hover {
+      background: var(--mcmillen-navy);
+      color: #ffffff;
+    }
+
+    .nav__toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--mcmillen-navy);
+      background: none;
+      border: none;
+    }
+
+    /* ============================================
+           Hero Section
+           ============================================ */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      color: var(--text-light);
+    }
+
+    .hero__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      filter: saturate(0.8) contrast(1.1);
+    }
+
+    .hero__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background: linear-gradient(90deg, rgba(30, 58, 95, 0.92) 0%, rgba(30, 58, 95, 0.7) 50%, rgba(30, 58, 95, 0.4) 100%);
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 3;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      width: 100%;
+    }
+
+    .hero__subtitle {
+      font-size: 1.1rem;
+      font-weight: 300;
+      max-width: 550px;
+      margin-bottom: 2rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.7;
+    }
+
+    .hero__cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ============================================
+           Buttons with Shimmer Effect
+           ============================================ */
+    .btn {
+      position: relative;
+      overflow: hidden;
+      padding: 0.9rem 2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition-smooth);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn--primary {
+      background: var(--text-light);
+      color: var(--mcmillen-navy);
+    }
+
+    .btn--primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      animation: shimmer 2.5s infinite;
+    }
+
+    .btn--secondary {
+      background: transparent;
+      color: var(--text-light);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .btn--secondary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      animation: shimmer 3s infinite;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    @keyframes shimmer {
+      0% {
+        left: -100%;
+      }
+
+      100% {
+        left: 100%;
+      }
+    }
+
+    /* Animations */
+    .animate-fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    }
+
+    .delay-1 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-2 {
+      animation-delay: 0.4s;
+    }
+
+    .delay-3 {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ============================================
+           Stats Section - Professional Design
+           ============================================ */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      padding: 3rem 0;
+    }
+
+    .stats__item {
+      text-align: center;
+      background: linear-gradient(145deg, rgba(30, 58, 95, 0.4), rgba(10, 22, 40, 0.6));
+      padding: 2.5rem 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      position: relative;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .stats__item:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .stats__item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--mcmillen-blue), var(--swiss-blue));
+      border-radius: 2px;
+    }
+
+    .stats__number {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 0.75rem;
+      background: linear-gradient(135deg, #fff, rgba(255, 255, 255, 0.8));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stats__label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 500;
+    }
+
+    /* ============================================
+           Glass Cards
+           ============================================ */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 4px;
+      padding: 2rem 1.5rem;
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: var(--mcmillen-navy);
+      transition: width 0.4s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-strong);
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .glass-card:hover::before {
+      width: 100%;
+    }
+
+    .glass-card__icon {
+      margin-bottom: 1rem;
+      color: var(--mcmillen-navy);
+    }
+
+    .glass-card__icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--mcmillen-navy);
+      stroke-width: 1.5;
+      fill: none;
+    }
+
+    .glass-card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .glass-card p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-size: 0.9rem;
+    }
+
+    /* Section Header */
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      color: var(--mcmillen-navy);
+    }
+
+    /* About Grid */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-content .lead {
+      margin-bottom: 1rem;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      filter: grayscale(20%) contrast(105%);
+      border-radius: 4px;
+    }
+
+    .about-image::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      width: 100%;
+      height: 100%;
+      border: 2px solid var(--mcmillen-navy);
+      border-radius: 4px;
+      z-index: -1;
+    }
+
+    /* Fund Section */
+    .fund-flowchart {
+      width: 100%;
+      max-width: 900px;
+      margin: 2rem auto;
+      display: block;
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.9rem;
+    }
+
+    th,
+    td {
+      padding: 1rem 1.2rem;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background: var(--mcmillen-navy);
+      color: white;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    tbody tr:hover {
+      background: var(--bg-pearl);
+    }
+
+    /* Partners Logo Wall */
+    .partners-wall {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3rem;
+      padding: 2rem 0;
+    }
+
+    .partner-logo {
+      height: 40px;
+      width: auto;
+      filter: grayscale(100%) opacity(0.6);
+      transition: var(--transition-smooth);
+    }
+
+    .partner-logo:hover {
+      filter: grayscale(0%) opacity(1);
+    }
+
+    .partners-disclaimer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 2rem;
+      font-style: italic;
+    }
+
+    /* FAQ */
+    .accordion {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    details {
+      background: white;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    summary {
+      padding: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: '+';
+      font-size: 1.3rem;
+      color: var(--mcmillen-navy);
+    }
+
+    details[open] summary::after {
+      content: '−';
+    }
+
+    details p {
+      padding: 0 1.2rem 1.2rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .contact-info h2 {
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    .contact-info p {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9rem;
+    }
+
+    .contact-item svg {
+      color: var(--mcmillen-navy);
+      opacity: 0.7;
+    }
+
+    .contact-form {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: 0.9rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--text-light);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: var(--transition-smooth);
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      background: var(--text-light);
+      color: var(--mcmillen-navy);
+      border: none;
+      padding: 1rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .form-submit::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: shimmer 2.5s infinite;
+    }
+
+    .form-submit:hover {
+      background: var(--swiss-blue);
+      color: var(--text-light);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #0a0f1a;
+      color: #999;
+      padding: 3rem 2rem 2rem;
+      font-size: 0.85rem;
+      border-top: 4px solid var(--mcmillen-navy);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #222;
+    }
+
+    .footer-col h4 {
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .footer-col a {
+      display: block;
+      color: #999;
+      margin-bottom: 0.6rem;
+      font-size: 0.85rem;
+    }
+
+    .footer-col a:hover {
+      color: var(--text-light);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 1.5rem;
+    }
+
+    .footer-regulatory {
+      font-size: 0.7rem;
+      line-height: 1.6;
+      color: #666;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .footer-copyright {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: #666;
+    }
+
+    .footer-logo {
+      max-width: 180px;
+      margin: 0 auto 1.5rem;
+    }
+
+    /* Business Cards Grid */
+    .business-cards {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .business-cards .glass-card {
+      grid-column: auto !important;
+    }
+
+    /* ============================================
+           Responsive Design
+           ============================================ */
+    @media (max-width: 1024px) {
+      .nav__links {
+        display: none;
+      }
+
+      .nav__toggle {
+        display: block;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1.5rem;
+      }
+
+      .section {
+        padding: 4rem 0;
+      }
+
+      .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 120px 0 60px;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero__subtitle {
+        font-size: 1rem;
+      }
+
+      .hero__cta {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem;
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        padding: 2rem 0;
+      }
+
+      .stats__item {
+        padding: 1.2rem 0.8rem;
+      }
+
+      .stats__number {
+        font-size: 1.6rem;
+      }
+
+      .stats__label {
+        font-size: 0.65rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .glass-card {
+        padding: 1.5rem;
+      }
+
+      .about-image img {
+        height: 280px;
+      }
+
+      .about-image::before {
+        display: none;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+
+      .footer-copyright {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+
+      table {
+        font-size: 0.8rem;
+      }
+
+      th,
+      td {
+        padding: 0.8rem;
+      }
+
+      .nav__actions {
+        gap: 0.5rem;
+      }
+
+      .nav__contact {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+      }
+
+      /* 手机端隐藏logo文字和Language下拉 */
+      .nav__logo-text {
+        display: none;
+      }
+
+      .lang-dropdown {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .stats__item {
+        padding: 1.5rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .nav__logo img {
+        height: 40px;
+      }
+
+      .nav__logo-text {
+        font-size: 0.85rem;
+        color: var(--mcmillen-navy) !important;
+      }
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      background: var(--mcmillen-navy);
+      padding: 2rem;
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition-smooth);
+      z-index: 999;
+    }
+
+    .mobile-menu.active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-menu a {
+      display: block;
+      color: var(--text-light);
+      padding: 1rem 0;
+      font-size: 1.1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-menu a:last-child {
+      border-bottom: none;
+    }
+
+    /* Investor Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 22, 40, 0.95);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal-overlay.hidden {
+      display: none;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 2.5rem;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-content h2 {
+      color: var(--mcmillen-navy);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .modal-content p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .modal-content .btn {
+      margin-top: 1rem;
+    }
+
+    /* ============================================
+       Language Toggle Logic (Final Override)
+       ============================================ */
+    /* Default: Hide Chinese, Show English */
+    .zh,
+    .zh-inline {
+      display: none !important;
+    }
+
+    .en {
+      display: block !important;
+    }
+
+    .en-inline {
+      display: inline !important;
+    }
+
+    /* Chinese Mode: Hide English, Show Chinese */
+    body.lang-zh .en,
+    body.lang-zh .en-inline {
+      display: none !important;
+    }
+
+    body.lang-zh .zh {
+      display: block !important;
+    }
+
+    body.lang-zh .zh-inline {
+      display: inline !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Investor Declaration Modal -->
+  <div id="investorModal" class="modal-overlay">
+    <div class="modal-content">
+      <h2 class="en">Investor Declaration</h2>
+      <h2 class="zh">投资者声明</h2>
+      <p class="en">By accessing this website, you confirm that you are an <strong>Accredited Investor</strong> or
+        <strong>Institutional Professional</strong> as defined by the regulatory authorities in your jurisdiction.
+      </p>
+      <p class="zh">访问本网站即表示您确认自己是所属司法管辖区监管机构定义的"合格投资者"或"机构专业人士"。</p>
+      <p class="en" style="font-size: 0.85rem; color: #999;">The information provided on this platform is for
+        informational purposes only and does not constitute financial advice or an offer of securities.</p>
+      <p class="zh" style="font-size: 0.85rem; color: #999;">本平台提供的信息仅供参考，不构成财务建议或证券要约。</p>
+      <button id="confirmInvestor" class="btn btn--primary">
+        <span class="en-inline">I Confirm</span>
+        <span class="zh-inline">我确认</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav scrolled" id="mainNav" style="background: white !important; border-bottom: 1px solid #ddd;">
+    <div class="nav__container">
+      <a href="#" class="nav__logo">
+        <img src="assets/logo-blue.jpg" alt="Mc Millen Logo">
+        <div class="nav__logo-text" style="color: var(--mcmillen-navy);">
+          Mc Millen <span>World</span>
+        </div>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#about-group" style="color: var(--text-dark);"><span class="en-inline">Group</span><span
+              class="zh-inline">集团背景</span></a></li>
+        <li><a href="#core-areas" style="color: var(--text-dark);"><span class="en-inline">Ecosystem</span><span
+              class="zh-inline">产业生态</span></a></li>
+        <li><a href="#about" style="color: var(--text-dark);"><span class="en-inline">Brand</span><span
+              class="zh-inline">品牌介绍</span></a></li>
+        <li><a href="#partners" style="color: var(--text-dark);"><span class="en-inline">Partners</span><span
+              class="zh-inline">战略合作</span></a></li>
+        <li><a href="#focus" style="color: var(--text-dark);"><span class="en-inline">Solutions</span><span
+              class="zh-inline">业务范围</span></a></li>
+        <li><a href="#projects" style="color: var(--text-dark);"><span class="en-inline">Performance</span><span
+              class="zh-inline">项目业绩</span></a></li>
+      </ul>
+      <div class="nav__actions">
+
+        <div class="lang-dropdown">
+          <button class="lang-btn"
+            style="color: var(--text-dark); border-color: rgba(0,0,0,0.1); background: rgba(0,0,0,0.02);">
+            <span id="currentLang">Language</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="lang-dropdown-menu">
+            <a href="#" data-lang="en" class="active">English (EN)</a>
+            <a href="#" data-lang="zh">简体中文 (ZH)</a>
+          </div>
+        </div>
+        <a href="contact.html" class="nav__contact" style="color: #ffffff; border-color: var(--mcmillen-navy);">
+          <span class="en-inline">Contact Us</span>
+          <span class="zh-inline">联系我们</span>
+          <span>→</span>
+        </a>
+        <a href="https://www.mcmillen.world" class="nav__login" id="memberLoginBtn" target="_blank">
+          <span class="en-inline">Member Login</span>
+          <span class="zh-inline">会员登入</span>
+        </a>
+        <button class="nav__toggle" id="navToggle" style="color: var(--text-dark);">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-lang-toggle"
+      style="margin-bottom: 2rem; display: flex; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+      <a href="#" data-lang="en" class="mobile-lang-link"
+        style="padding: 0; border: none; font-size: 0.9rem; opacity: 0.8;">EN / English</a>
+      <a href="#" data-lang="zh" class="mobile-lang-link"
+        style="padding: 0; border: none; font-size: 0.9rem; opacity: 0.8;">ZH / 简体中文</a>
+    </div>
+    <a href="#about-group"><span class="en-inline">Group</span><span class="zh-inline">集团背景</span></a>
+    <a href="#core-areas"><span class="en-inline">Ecosystem</span><span class="zh-inline">产业生态</span></a>
+    <a href="#about"><span class="en-inline">Brand</span><span class="zh-inline">品牌介绍</span></a>
+    <a href="#partners"><span class="en-inline">Partners</span><span class="zh-inline">战略合作</span></a>
+    <a href="#focus"><span class="en-inline">Solutions</span><span class="zh-inline">业务范围</span></a>
+    <a href="#projects"><span class="en-inline">Performance</span><span class="zh-inline">项目业绩</span></a>
+
+    <a href="https://www.mcmillen.world" class="mobile-login-btn" id="mobileLoginBtn" target="_blank"
+      style="background: rgba(255,255,255,0.1); text-align: center; margin-top: 1rem; border-radius: 4px;"><span
+        class="en-inline">Member Login</span><span class="zh-inline">会员登入</span></a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero__overlay"></div>
+    <img src="assets/hero-bg-new.jpg" alt="Strategic Investment" class="hero__bg">
+
+    <div class="hero__content">
+      <span class="eyebrow eyebrow--light animate-fade-up">Mc Millen World</span>
+      <h1 class="animate-fade-up delay-1 en">Professional Finance.<br>Smarter Wealth.</h1>
+      <h1 class="animate-fade-up delay-1 zh">让金融更专业<br>让财富更高效</h1>
+      <p class="hero__subtitle animate-fade-up delay-2 en">Mc Millen World is the independent financial platform of Mc
+        Millen Group, dedicated to delivering resilient and forward-looking financial solutions through global
+        structuring and innovation.</p>
+      <p class="hero__subtitle animate-fade-up delay-2 zh">麦壳米伦世界是麦壳米伦集团旗下的独立金融平台，致力于通过全球化架构与创新，提供稳健且前瞻的金融解决方案。</p>
+      <div class="hero__cta animate-fade-up delay-3">
+        <a href="#contact" class="btn btn--primary">
+          <span class="en-inline">Contact Us</span>
+          <span class="zh-inline">联系我们</span>
+        </a>
+        <a href="#projects" class="btn btn--secondary">
+          <span class="en-inline">View Funds</span>
+          <span class="zh-inline">查看基金</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="stats">
+        <div class="stats__item">
+          <div class="stats__number">2018</div>
+          <div class="stats__label en">Established</div>
+          <div class="stats__label zh">成立年份</div>
+        </div>
+        <div class="stats__item">
+          <div class="stats__number">$500M+</div>
+          <div class="stats__label en">Assets Under Management</div>
+          <div class="stats__label zh">管理资产规模</div>
+        </div>
+        <div class="stats__item">
+          <div class="stats__number">
+            <span class="en-inline">Tier 1</span>
+            <span class="zh-inline">顶级</span>
+          </div>
+          <div class="stats__label en">Asset Backing</div>
+          <div class="stats__label zh">资产支持</div>
+        </div>
+        <div class="stats__item">
+          <div class="stats__number">
+            <span class="en-inline">Global</span>
+            <span class="zh-inline">全球</span>
+          </div>
+          <div class="stats__label en">Investment Reach</div>
+          <div class="stats__label zh">投资范围</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1.关于集团 - About Group -->
+  <section class="section" id="about-group">
+    <div class="container">
+
+
+      <div class="about-grid">
+        <div class="about-content">
+          <h2 class="en">Mc Millen Group</h2>
+          <h2 class="zh">麦壳米伦集团</h2>
+          <p class="lead en">Founded in 2018, Mc Millen Group entered Thailand upon invitation from the Thai Royal
+            Family, participating in national infrastructure development, real estate, and landmark projects.</p>
+          <p class="lead zh">麦壳米伦集团成立于 2018 年。集团因受泰国皇室邀请进入泰国市场，参与国家级基础设施建设、房地产开发及多项地标性项目。</p>
+        </div>
+        <div class="about-image">
+          <img src="assets/landmark-skyscraper-final.png" alt="Mc Millen Group">
+        </div>
+      </div>
+
+      <style>
+        .president-card {
+          display: flex;
+          gap: 3rem;
+          background: #fff;
+          border-radius: 12px;
+          padding: 2.5rem;
+          box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
+          margin-top: 4rem;
+          border-left: 6px solid var(--swiss-red);
+          align-items: center;
+        }
+
+        .president-photo {
+          flex: 0 0 280px;
+          height: 380px;
+          border-radius: 8px;
+          overflow: hidden;
+          position: relative;
+        }
+
+        .president-photo img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: 50% 15%;
+        }
+
+        .president-overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 40%;
+          background: linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+        }
+
+        @media (max-width: 768px) {
+          .president-card {
+            flex-direction: column;
+            gap: 2rem;
+            padding: 1.5rem;
+            align-items: flex-start;
+          }
+
+          .president-photo {
+            flex: 0 0 auto;
+            width: 100%;
+            height: auto;
+          }
+
+          .president-photo img {
+            object-fit: contain;
+            object-position: center;
+            width: 100%;
+            height: auto;
+          }
+        }
+      </style>
+
+      <!-- 总裁寄语标题 -->
+      <div
+        style="margin-top: 4rem; margin-bottom: 2rem; border-bottom: 2px solid var(--bg-pearl); padding-bottom: 1.5rem;">
+        <h2
+          style="font-size: 1.8rem; color: var(--mcmillen-navy); font-weight: 700; display: flex; align-items: center; gap: 16px; margin: 0;">
+          <span style="width: 40px; height: 4px; background: var(--swiss-red);"></span>
+          <span class="en-inline">President's Message</span>
+          <span class="zh-inline">总裁寄语</span>
+        </h2>
+      </div>
+
+      <!-- 精修版总裁名片 -->
+      <div class="president-card">
+        <div class="president-photo">
+          <img src="assets/david-tan-v2.jpg" alt="Dato’ Seri David Tan">
+          <div class="president-overlay"></div>
+        </div>
+        <div class="president-info">
+          <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--mcmillen-navy);">
+            <span class="en-inline">Dato' Seri David Tan</span>
+            <span class="zh-inline">拿督斯里陈泰圩</span>
+          </h3>
+          <h4
+            style="font-size: 0.95rem; color: var(--mcmillen-navy); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600;">
+            <span class="en-inline">President of Mc Millen Group</span>
+            <span class="zh-inline">麦壳米伦集团总裁</span>
+          </h4>
+
+          <div class="en">
+            <p style="margin-bottom: 1.5rem; font-size: 1rem; color: var(--text-dark); line-height: 1.6;">Mc Millen
+              Group remains anchored in stability, powered by expertise, and guided by responsibility—firmly staying on
+              the path of long-termism in an ever-changing world. We focus on real economy sectors to create true value.
+            </p>
+          </div>
+
+          <div class="zh">
+            <p style="margin-bottom: 1.5rem; font-size: 1rem; color: var(--text-dark); line-height: 1.6;">
+              麦壳米伦集团以稳健为本、专业为基、科技为工具、责任为底线，在不断变化的世界中，坚定走在长期主义的道路上。其业务涵盖基础设施、可持续发展、艺术、科技与医疗，致力于创造真实价值。</p>
+          </div>
+
+          <a href="leadership-david-tan.html" class="btn btn--secondary"
+            style="margin-top: 2rem; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-color: var(--mcmillen-navy); color: var(--mcmillen-navy);">
+            <span class="en-inline">Read Full Bio</span>
+            <span class="zh-inline">查看详情</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2.核心领域 - Core Areas -->
+  <section class="section section--pearl" id="core-areas">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow en">Core Areas</span>
+        <span class="eyebrow zh">核心领域</span>
+        <h2 class="en">Four Core Areas</h2>
+        <h2 class="zh">四大核心领域</h2>
+        <p class="lead en" style="margin: 0.5rem auto 0;">A diversified ecosystem connecting physical assets with
+          financial growth.</p>
+        <p class="lead zh" style="margin: 0.5rem auto 0;">多元化生态系统，连接实体资产与金融增长。</p>
+      </div>
+
+      <div style="text-align: center; margin: 2rem auto;">
+        <img src="assets/core-areas-finance.jpg" alt="Four Core Areas"
+          style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow-strong);">
+      </div>
+
+      <div class="card-grid" style="margin-top: 2rem;">
+        <div class="glass-card">
+          <div class="glass-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 21h18M5 21V7l8-4 8 4v14M9 21v-6h6v6" />
+            </svg>
+          </div>
+          <h3 class="en">Landmark Construction</h3>
+          <h3 class="zh">地标建设</h3>
+          <p class="en">Iconic projects that symbolize progress—built with expert partners and engineered for long-term
+            regional potential.</p>
+          <p class="zh">标志性项目象征着进步——与专业合作伙伴共建，为长期区域潜力而设计。</p>
+        </div>
+        <div class="glass-card">
+          <div class="glass-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+              <polyline points="16 7 22 7 22 13" />
+            </svg>
+          </div>
+          <h3 class="en">Financial Management</h3>
+          <h3 class="zh">金融管理</h3>
+          <p class="en">Professional trading, risk control, and product distribution—backed by a seasoned European
+            finance team.</p>
+          <p class="zh">专业交易、风险控制和产品分销——由资深欧洲金融团队提供支持。</p>
+        </div>
+        <div class="glass-card">
+          <div class="glass-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+              <path d="M12 6v6l4 2" />
+            </svg>
+          </div>
+          <h3 class="en">Art & Cultural Tourism</h3>
+          <h3 class="zh">艺术与文化旅游</h3>
+          <p class="en">Immersive cultural experiences that create emotional resonance while supporting heritage and
+            innovation.</p>
+          <p class="zh">沉浸式文化体验，创造情感共鸣，同时支持遗产保护与创新。</p>
+        </div>
+        <div class="glass-card">
+          <div class="glass-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+            </svg>
+          </div>
+          <h3 class="en">Smart Healthcare</h3>
+          <h3 class="zh">智慧医疗</h3>
+          <p class="en">AI-enabled healthcare services—online and offline—developed with leading medical partners.</p>
+          <p class="zh">AI赋能的医疗服务——线上线下融合——与领先医疗合作伙伴共同开发。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3.关于我们 - About Us -->
+  <section class="section section--pearl" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <span class="eyebrow en">About Us</span>
+          <span class="eyebrow zh">关于我们</span>
+          <h2 class="en">Mc Millen World - Finance</h2>
+          <h2 class="zh">麦壳米伦-金融</h2>
+          <h3 class="en" style="margin-top: 1.5rem; color: var(--mcmillen-navy);">Independent Financial Brand</h3>
+          <h3 class="zh" style="margin-top: 1.5rem; color: var(--mcmillen-navy);">独立金融品牌</h3>
+          <p class="en">Based on years of financial practice, Mc Millen World was established as an independent
+            professional financial platform, focusing on asset management, private equity, and structured finance.</p>
+          <p class="zh">基于多年金融实践，集团正式设立麦壳米伦世界（Mc Millen World）作为独立运营的专业金融平台，全面聚焦资产管理、私募投资与结构化金融。</p>
+
+          <div
+            style="margin-top: 2rem; padding: 1.5rem; background: white; border-left: 4px solid var(--swiss-blue); border-radius: 8px;">
+            <h4 class="en">Our Mission</h4>
+            <h4 class="zh">我们的使命</h4>
+            <p class="en" style="font-style: italic; font-weight: 500;">"Connecting the real economy with capital
+              markets through a global perspective, ensuring finance truly serves long-term value creation."</p>
+            <p class="zh" style="font-style: italic; font-weight: 500;">“让天下没有难赚的钱。我们以全球视野连接实体经济与资本市场，让金融真正服务于长期价值创造。”
+            </p>
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="assets/team-experts.png" alt="Mc Millen World">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Our Strengths Section (Core Advantages) -->
+  <section class="section section--pearl">
+    <div class="section-header">
+      <span class="eyebrow en">Core Advantages</span>
+      <span class="eyebrow zh">核心优势</span>
+      <h2 class="en">Our Strengths</h2>
+      <h2 class="zh">我们的优势</h2>
+    </div>
+    <div class="card-grid">
+      <div class="glass-card">
+        <div class="glass-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <path
+              d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
+        </div>
+        <h3 class="en">International Expertise</h3>
+        <h3 class="zh">国际化专家团队</h3>
+        <p class="en">Senior team with European financial backgrounds, serving institutional and high-net-worth clients
+          globally.</p>
+        <p class="zh">核心团队由具备欧洲金融背景的资深成员组成，长期服务于国际机构投资者与高净值客户。</p>
+      </div>
+      <div class="glass-card">
+        <div class="glass-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+          </svg>
+        </div>
+        <h3 class="en">Strategic Structuring</h3>
+        <h3 class="zh">跨境架构设计</h3>
+        <p class="en">Expertise in cross-border capital structures and multi-jurisdiction operations.</p>
+        <p class="zh">具备跨境资本结构设计能力，拥有在香港、新加坡、马来西亚等多司法管辖区的操作经验。</p>
+      </div>
+      <div class="glass-card">
+        <div class="glass-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+          </svg>
+        </div>
+        <h3 class="en">Disciplined Risk Control</h3>
+        <h3 class="zh">严谨风控体系</h3>
+        <p class="en">Rigorous compliance and risk management systems developed over years of financial practice.</p>
+        <p class="zh">基于多年实践，建立起严格的合规与风控体系，确保每一项业务都在法律与监管框架下稳健运行。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4.战略合作 - Strategic Partners -->
+  <section class="section" id="partners">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow en">Strategic Partnerships</span>
+        <span class="eyebrow zh">战略合作</span>
+        <h2 class="en">Strategic Partners</h2>
+        <h2 class="zh">战略合作伙伴</h2>
+        <p class="lead en" style="margin: 0.5rem auto 0;">Collaborating with world-class institutions to ensure security
+          and growth.</p>
+        <p class="lead zh" style="margin: 0.5rem auto 0;">与世界级机构合作，确保安全与增长。</p>
+      </div>
+
+      <!-- Partner Cards -->
+      <div class="card-grid" style="gap: 2.5rem; margin-top: 3rem; align-items: stretch;">
+        <!-- Swiss International Holding Trust AG -->
+        <div class="glass-card"
+          style="border-top: 4px solid var(--mcmillen-navy); padding: 2rem 1.5rem; display: flex; flex-direction: column;">
+          <div style="text-align: center; margin-bottom: 1.5rem;">
+            <div
+              style="height: 70px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+              <img src="assets/siht-logo.png" alt="Swiss International Holding Trust AG"
+                style="max-width: 80px; max-height: 70px; object-fit: contain;">
+            </div>
+            <h3 style="font-size: 1rem; margin-bottom: 0.3rem;" class="en">Swiss International Holding Trust AG</h3>
+            <h3 style="font-size: 1rem; margin-bottom: 0.3rem;" class="zh">瑞士国际控股信托公司</h3>
+            <span
+              style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; display: block; margin-top: 0.3rem;">Since
+              1970 · FINMA Regulated</span>
+          </div>
+          <p class="en" style="font-size: 0.85rem; line-height: 1.7; flex: 1;">Founded in 1970, Swiss International
+            Holding Trust AG is a globally recognized trust and fiduciary powerhouse, operating under the stringent
+            oversight of the Swiss Financial Market Supervisory Authority (FINMA).</p>
+          <p class="zh" style="font-size: 0.85rem; line-height: 1.7; flex: 1;">
+            其信托公司是一家创立于1970年，是一家实力雄厚，金融业务遍布全球并通过瑞士金融监管局（FINMA）监管的信托控股公司。其机构专注于私募基金开发，透过多元化金融产品的杠杆和对冲机制，成功在多年屹立不倒的管理着超过500亿美金的资产。
+          </p>
+        </div>
+
+        <!-- Suisse Private Digibank -->
+        <div class="glass-card"
+          style="border-top: 4px solid #7B4B9E; padding: 2rem 1.5rem; display: flex; flex-direction: column;">
+          <div style="text-align: center; margin-bottom: 1.5rem;">
+            <div
+              style="height: 70px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+              <img src="assets/spdb-logo.png" alt="Suisse Private Digibank"
+                style="max-width: 160px; max-height: 50px; object-fit: contain; border-radius: 4px;">
+            </div>
+            <h3 style="font-size: 1rem; margin-bottom: 0.3rem;" class="en">Suisse Private Digibank (SPDB)</h3>
+            <h3 style="font-size: 1rem; margin-bottom: 0.3rem;" class="zh">苏瑞士私人数字银行</h3>
+            <span
+              style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; display: block; margin-top: 0.3rem;">FinCEN
+              Regulated · U.S. Licensed</span>
+          </div>
+          <p class="en" style="font-size: 0.85rem; line-height: 1.7; flex: 1;">Suisse PIDB, an innovative financial
+            institution holding U.S. digital asset and fintech financial service licenses, is jointly regulated by the
+            U.S. Treasury's FinCEN and state-level financial regulatory authorities.</p>
+          <p class="zh" style="font-size: 0.85rem; line-height: 1.7; flex: 1;">
+            一家持有美国数字资产与科技金融服务牌照的创新型金融机构，接受美国财政部金融犯罪执法网络（FinCEN）及州级金融监管机构的联合监管。除了指定法币和相关的数字货币之外，实体卡（VISA，MASTER）都能进行支付。
+          </p>
+        </div>
+
+        <!-- UBS Investment Bank -->
+        <div class="glass-card"
+          style="border-top: 4px solid #E60000; padding: 2rem 1.5rem; display: flex; flex-direction: column;">
+          <div style="text-align: center; margin-bottom: 1.5rem;">
+            <div
+              style="height: 100px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+              <img src="assets/ubs-logo-v3.png" alt="UBS"
+                style="max-width: 220px; max-height: 80px; object-fit: contain;">
+            </div>
+            <h3 style="font-size: 1rem; margin-bottom: 0.3rem;" class="en">UBS Investment Bank</h3>
+            <h3 style="font-size: 1rem; margin-bottom: 0.3rem;" class="zh">瑞银投资银行</h3>
+            <span
+              style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; display: block; margin-top: 0.3rem;">Est.
+              1862 · Global Financial Leader</span>
+          </div>
+          <p class="en" style="font-size: 0.85rem; line-height: 1.7; flex: 1;">With a heritage spanning over 160 years,
+            UBS Investment Bank is a bank of unquestionable strength. As the largest bank in Switzerland and one of the
+            most iconic financial institutions globally.</p>
+          <p class="zh" style="font-size: 0.85rem; line-height: 1.7; flex: 1;">拥有超过 160
+            年的历史，其实力毋庸置疑，瑞士最大的银行，也是全球最具代表性的银行之一，它提供一站式的金融服务，同时是打造私募基金最重要的角色。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5.业务版图 - Business Layout -->
+  <section class="section section--pearl" id="focus">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow en">Business Layout</span>
+        <span class="eyebrow zh">业务版图</span>
+        <h2 class="en">Business Scope</h2>
+        <h2 class="zh">业务范围</h2>
+        <p class="lead en" style="margin: 0.5rem auto 0;">Mc Millen World operates across traditional finance and
+          emerging fintech, forming a multi-layered financial service system.</p>
+        <p class="lead zh" style="margin: 0.5rem auto 0;">麦壳米伦世界的业务涵盖传统金融与新兴金融科技，形成多层次、跨市场的专业金融服务体系。</p>
+      </div>
+
+      <div class="card-grid business-cards">
+        <div class="glass-card">
+          <div class="glass-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg></div>
+          <h3 class="en">Trust & Wealth</h3>
+          <h3 class="zh">信托与财富管理</h3>
+          <p class="en">Family trusts, asset isolation, and cross-border wealth architecture design.</p>
+          <p class="zh">家族信托、资产隔离、跨境财富架构设计。</p>
+        </div>
+        <div class="glass-card">
+          <div class="glass-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+              <line x1="12" y1="22.08" x2="12" y2="12" />
+            </svg></div>
+          <h3 class="en">Fund Management</h3>
+          <h3 class="zh">基金管理</h3>
+          <p class="en">Index strategies, structured funds, and asset allocation investment products.</p>
+          <p class="zh">指数策略基金、结构化基金、资产配置型投资产品。</p>
+        </div>
+        <div class="glass-card">
+          <div class="glass-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+              <circle cx="8.5" cy="7" r="4" />
+              <polyline points="17 11 19 13 23 9" />
+            </svg></div>
+          <h3 class="en">Private Equity</h3>
+          <h3 class="zh">私募与项目投资</h3>
+          <p class="en">Private placement, M&A investment, and cross-border capital cooperation.</p>
+          <p class="zh">私募配售、并购投资、跨境资本合作。</p>
+          <a href="private-equity.html" class="btn btn--secondary"
+            style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.8rem; border-color: var(--mcmillen-navy); color: var(--mcmillen-navy);">
+            <span class="en-inline">Learn More</span>
+            <span class="zh-inline">了解详情</span>
+          </a>
+        </div>
+        <div class="glass-card">
+          <div class="glass-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+              <polyline points="16 7 22 7 22 13" />
+            </svg></div>
+          <h3 class="en">Commodities & Futures</h3>
+          <h3 class="zh">大宗商品与期货</h3>
+          <p class="en">Quantitative models and risk control systems for derivatives trading.</p>
+          <p class="zh">结合量化模型与风控系统的衍生品交易与对冲策略。</p>
+        </div>
+        <div class="glass-card">
+          <div class="glass-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg></div>
+          <h3 class="en">Digital Assets</h3>
+          <h3 class="zh">数字金融与加密资产</h3>
+          <p class="en">Blockchain finance, RWA, and compliant digital asset management.</p>
+          <p class="zh">合规框架下的区块链金融、RWA、数字资产管理及加密金融产品。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6.项目与业绩 - Track Record Section -->
+  <section class="section" id="projects" style="background: #f8fafc;">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow en" style="color: var(--swiss-blue);">Achievements</span>
+        <span class="eyebrow zh" style="color: var(--swiss-blue);">项目与业绩</span>
+        <h2 class="en">Our Track Record</h2>
+        <h2 class="zh">项目成果</h2>
+      </div>
+
+      <div class="track-record-grid"
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-top: 3rem;">
+
+        <!-- Card 1: Completed -->
+        <div class="glass-card"
+          style="border-top: 4px solid var(--mcmillen-navy); display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div style="padding: 1rem 0 1.5rem 0;">
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 1.5rem;">
+              <div
+                style="width: 44px; height: 44px; background: rgba(14, 42, 71, 0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--mcmillen-navy);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <div>
+                <span class="en"
+                  style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 700;">Milestones</span>
+                <span class="zh"
+                  style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 700;">里程碑</span>
+                <h3 class="en" style="margin: 0; font-size: 1.25rem;">Completed Projects</h3>
+                <h3 class="zh" style="margin: 0; font-size: 1.25rem;">已完成项目</h3>
+              </div>
+            </div>
+
+            <ul style="list-style: none; padding: 0; margin: 0;">
+              <li
+                style="padding: 14px 0; border-bottom: 1px dashed #e2e8f0; display: flex; align-items: flex-start; gap: 10px;">
+                <span style="color: #10b981; margin-top: 4px;">●</span>
+                <div>
+                  <div class="en" style="font-weight: 600; font-size: 0.95rem;">Green Engine Project</div>
+                  <div class="zh" style="font-weight: 600; font-size: 0.95rem;">绿色发动机项目</div>
+                </div>
+              </li>
+              <li
+                style="padding: 14px 0; border-bottom: 1px dashed #e2e8f0; display: flex; align-items: flex-start; gap: 10px;">
+                <span style="color: #10b981; margin-top: 4px;">●</span>
+                <div>
+                  <div class="en" style="font-weight: 600; font-size: 0.95rem;">U.S. Treasury PPP</div>
+                  <div class="zh" style="font-weight: 600; font-size: 0.95rem;">美国国债私募配售（PPP）</div>
+                </div>
+              </li>
+              <li
+                style="padding: 14px 0; border-bottom: 1px dashed #e2e8f0; display: flex; align-items: flex-start; gap: 10px;">
+                <span style="color: #10b981; margin-top: 4px;">●</span>
+                <div>
+                  <div class="en" style="font-weight: 600; font-size: 0.95rem;">Hua Hin Real Estate</div>
+                  <div class="zh" style="font-weight: 600; font-size: 0.95rem;">泰国华欣海滨房地产项目</div>
+                </div>
+              </li>
+              <li
+                style="padding: 14px 0; border-bottom: 1px dashed #e2e8f0; display: flex; align-items: flex-start; gap: 10px;">
+                <span style="color: #10b981; margin-top: 4px;">●</span>
+                <div>
+                  <div class="en" style="font-weight: 600; font-size: 0.95rem;">Hang Seng Property Fund</div>
+                  <div class="zh" style="font-weight: 600; font-size: 0.95rem;">恒生指数滚动房地产基金</div>
+                </div>
+              </li>
+              <li style="padding: 14px 0; display: flex; align-items: flex-start; gap: 10px;">
+                <span style="color: #10b981; margin-top: 4px;">●</span>
+                <div>
+                  <div class="en" style="font-weight: 600; font-size: 0.95rem;">HSI Rolling Fund 1.0 & 2.0</div>
+                  <div class="zh" style="font-weight: 600; font-size: 0.95rem;">恒生指数滚动基金 (Phase 1)</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 2: Ongoing -->
+        <div class="glass-card" style="border-top: 4px solid var(--swiss-red); display: flex; flex-direction: column;">
+          <div style="padding: 1rem 0 1.5rem 0;">
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 1.5rem;">
+              <div
+                style="width: 44px; height: 44px; background: rgba(230, 0, 0, 0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--swiss-red);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path
+                    d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83">
+                  </path>
+                </svg>
+              </div>
+              <div>
+                <span class="en"
+                  style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 700;">In
+                  Progress</span>
+                <span class="zh"
+                  style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 700;">执行中</span>
+                <h3 class="en" style="margin: 0; font-size: 1.25rem;">Ongoing Projects</h3>
+                <h3 class="zh" style="margin: 0; font-size: 1.25rem;">正在进行项目</h3>
+              </div>
+            </div>
+
+            <div
+              style="background: #f8fafc; padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 1.5rem;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 12px;">
+                <div>
+                  <div class="en" style="font-weight: 700; font-size: 1rem; color: var(--mcmillen-navy);">HSI Rolling
+                    Fund 2.0</div>
+                  <div class="zh" style="font-weight: 700; font-size: 1rem; color: var(--mcmillen-navy);">恒生指数滚动基金 2.0
+                  </div>
+                  <div class="en" style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Strategic
+                    Rebalancing</div>
+                  <div class="zh" style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">战略性资产再平衡</div>
+                </div>
+                <div style="text-align: right;">
+                  <span
+                    style="display: block; font-size: 1.5rem; font-weight: 800; color: var(--swiss-blue); line-height: 1;">75%</span>
+                  <span class="en"
+                    style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Execution</span>
+                  <span class="zh"
+                    style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">执行进度</span>
+                </div>
+              </div>
+              <div style="background: #e2e8f0; height: 8px; border-radius: 4px; overflow: hidden;">
+                <div
+                  style="background: linear-gradient(90deg, var(--swiss-blue), var(--mcmillen-navy)); width: 75%; height: 100%; border-radius: 4px;">
+                </div>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+              <div
+                style="background: white; padding: 1rem; border-radius: 8px; border: 1px solid #e2e8f0; text-align: center;">
+                <div style="font-size: 1.2rem; font-weight: 800; color: var(--mcmillen-navy);">$100M+</div>
+                <div class="en"
+                  style="font-size: 0.6rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;">
+                  Current AUM</div>
+                <div class="zh"
+                  style="font-size: 0.6rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;">
+                  当前资产规模</div>
+              </div>
+              <div
+                style="background: white; padding: 1rem; border-radius: 8px; border: 1px solid #e2e8f0; text-align: center;">
+                <div style="font-size: 1.2rem; font-weight: 800; color: var(--swiss-blue);">80%</div>
+                <div class="en"
+                  style="font-size: 0.6rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;">
+                  Target Yield</div>
+                <div class="zh"
+                  style="font-size: 0.6rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;">
+                  目标年化收益</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Market Presence -->
+        <div class="glass-card"
+          style="border-top: 4px solid var(--gold-accent); display: flex; flex-direction: column;">
+          <div style="padding: 1rem 0 1.5rem 0;">
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 2rem;">
+              <div
+                style="width: 44px; height: 44px; background: rgba(192, 178, 131, 0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--gold-accent);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                  </path>
+                </svg>
+              </div>
+              <div>
+                <span class="en"
+                  style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 700;">Global
+                  Network</span>
+                <span class="zh"
+                  style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 700;">全球网络</span>
+                <h3 class="en" style="margin: 0; font-size: 1.25rem;">Market Reach</h3>
+                <h3 class="zh" style="margin: 0; font-size: 1.25rem;">业务版图</h3>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 2rem;">
+              <div class="market-tag"
+                style="background: white; border: 1px solid #e2e8f0; padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; color: var(--mcmillen-navy);">
+                <span class="en">Hong Kong</span><span class="zh">香港</span>
+              </div>
+              <div class="market-tag"
+                style="background: white; border: 1px solid #e2e8f0; padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; color: var(--mcmillen-navy);">
+                <span class="en">Singapore</span><span class="zh">新加坡</span>
+              </div>
+              <div class="market-tag"
+                style="background: white; border: 1px solid #e2e8f0; padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; color: var(--mcmillen-navy);">
+                <span class="en">Malaysia</span><span class="zh">马来西亚</span>
+              </div>
+              <div class="market-tag"
+                style="background: white; border: 1px solid #e2e8f0; padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; color: var(--mcmillen-navy);">
+                <span class="en">Thailand</span><span class="zh">泰国</span>
+              </div>
+              <div class="market-tag"
+                style="background: white; border: 1px solid #e2e8f0; padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; color: var(--mcmillen-navy);">
+                <span class="en">Zurich</span><span class="zh">苏黎世</span>
+              </div>
+            </div>
+
+            <div
+              style="background: linear-gradient(135deg, var(--mcmillen-navy), #1e3a5f); color: white; padding: 1.5rem; border-radius: 12px; margin-top: auto;">
+              <p style="font-size: 0.9rem; margin: 0; line-height: 1.6; color: #ffffff !important;">
+                <span class="en">Connecting real economy hubs with global capital markets, ensuring diversified asset
+                  allocation across top-tier jurisdictions.</span>
+                <span class="zh">链接实体经济中心与全球资本市场，确保在顶级司法管辖区内实现多元化的资产配置与稳健增长。</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ Section -->
+  <section class="section" id="faq">
+    <div class="section-header">
+      <span class="eyebrow en">FAQ</span>
+      <span class="eyebrow zh">常见问题</span>
+      <h2 class="en">Frequently Asked Questions</h2>
+      <h2 class="zh">常见问题</h2>
+    </div>
+    <div class="accordion">
+      <details>
+        <summary>
+          <span class="en">What is the integrated risk mitigation mechanism?</span>
+          <span class="zh">什么是综合风险缓解机制？</span>
+        </summary>
+        <p class="en">It is a structured risk management policy involving asset segregation and hedging strategies
+          designed to protect capital in volatile environments.</p>
+        <p class="zh">这是一项结构化风险管理政策，涉及资产隔离和对冲策略，旨在在波动环境中保护资本。</p>
+      </details>
+      <details>
+        <summary>
+          <span class="en">How does the settlement cycle work?</span>
+          <span class="zh">结算周期如何运作？</span>
+        </summary>
+        <p class="en">Settlement is processed efficiently following market closings, allowing for superior liquidity
+          compared to traditional closed-end funds.</p>
+        <p class="zh">结算在市场收盘后高效处理，与传统封闭式基金相比，提供更优越的流动性。</p>
+      </details>
+      <details>
+        <summary>
+          <span class="en">How do I start?</span>
+          <span class="zh">如何开始？</span>
+        </summary>
+        <p class="en">Verified investors can register through our partner digital banking portals to complete the
+          required compliance and KYC procedures.</p>
+        <p class="zh">经验证的投资者可以通过我们的合作数字银行门户注册，完成所需的合规和KYC程序。</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section section--dark" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="eyebrow eyebrow--light en">Get in Touch</span>
+          <span class="eyebrow eyebrow--light zh">联系我们</span>
+          <h2 class="en">Begin Your Journey<br>With McMillen</h2>
+          <h2 class="zh">开启您与 McMillen<br>的合作之旅</h2>
+          <p class="en">We welcome inquiries from potential investors and strategic partners. Please contact us to learn
+            more about our investment philosophy and opportunities.</p>
+          <p class="zh">我们欢迎潜在投资者和战略合作伙伴的咨询。请联系我们了解更多关于我们投资理念和机会的信息。</p>
+
+          <div style="margin-top: 1.5rem;">
+            <div class="contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              <span>mcmillenadmin@163.com</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="d7215549-2266-4f18-9747-ffe8150dd1bb">
+          <input type="hidden" name="subject" value="New Inquiry from Mc Millen World Website">
+          <input type="hidden" name="from_name" value="Mc Millen World Contact">
+          <input type="hidden" name="redirect" value="">
+          <div class="form-group">
+            <label class="form-label en">Full Name</label>
+            <label class="form-label zh">姓名</label>
+            <input type="text" name="name" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label en">Email Address</label>
+            <label class="form-label zh">电子邮箱</label>
+            <input type="email" name="email" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label en">Your Message</label>
+            <label class="form-label zh">您的留言</label>
+            <textarea name="message" class="form-textarea" required></textarea>
+          </div>
+          <button type="submit" class="form-submit">
+            <span class="en-inline">Submit Inquiry</span>
+            <span class="zh-inline">提交咨询</span>
+            <span> →</span>
+          </button>
+          <div id="formMessage"
+            style="display: none; margin-top: 1rem; padding: 1rem; border-radius: 8px; text-align: center;"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <img src="assets/footer-logo-new.png" alt="McMillen Logo" class="footer-logo">
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="#about-group">Group / 集团</a>
+          <a href="#about">About / 关于</a>
+          <a href="#partners">Partners / 伙伴</a>
+          <a href="#projects">Track Record / 项目业绩</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="#faq">FAQ</a>
+          <a href="contact.html">Contact / 联系</a>
+          <a href="#hero">Back to Top / 返回</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="risk.html">Risk Disclosure / 风险</a>
+          <a href="privacy.html">Privacy Policy / 隐私</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p style="color: #999; line-height: 1.6; font-size: 0.85rem; margin: 0;">mcmillenadmin@163.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-regulatory en">
+          Mc Millen World and its affiliates operate in multiple jurisdictions. All financial products and services are
+          conducted in accordance with applicable laws and regulations, including but not limited to Anti-Money
+          Laundering (AML)
+          and Counter-Terrorist Financing (CTF) standards in Hong Kong, Singapore, and Malaysia.
+        </p>
+        <p class="footer-regulatory zh">
+          Mc Millen World 及其关联实体在不同司法管辖区开展业务，所有金融产品与服务均遵循适用法律与监管要求，包括但不限于符合香港、新加坡及马来西亚
+          国际反洗钱 (AML) 及反恐融资 (CTF) 标准。
+        </p>
+        <div class="footer-copyright">
+          <span>© 2026 Mc Millen World. All rights reserved.</span>
+          <span class="en">Swiss Financial Excellence</span>
+          <span class="zh">瑞士金融卓越</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation Scroll Effect
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Investor Modal
+    const modal = document.getElementById('investorModal');
+    const confirmBtn = document.getElementById('confirmInvestor');
+    if (sessionStorage.getItem('investorConfirmed')) {
+      modal.classList.add('hidden');
+    }
+    confirmBtn.addEventListener('click', () => {
+      sessionStorage.setItem('investorConfirmed', 'true');
+      modal.classList.add('hidden');
+    });
+
+
+    // Language Switcher
+    const langLinks = document.querySelectorAll('.lang-dropdown-menu a, .mobile-lang-link');
+    const currentLangEl = document.getElementById('currentLang');
+
+    function setLanguage(lang) {
+      if (lang === 'zh') {
+        document.body.classList.add('lang-zh');
+        if (currentLangEl) currentLangEl.textContent = '简体中文';
+      } else {
+        document.body.classList.remove('lang-zh');
+        if (currentLangEl) currentLangEl.textContent = 'Language';
+      }
+
+      langLinks.forEach(link => {
+        link.classList.toggle('active', link.dataset.lang === lang);
+        // Visual feedback for mobile links
+        if (link.classList.contains('mobile-lang-link')) {
+          link.style.opacity = link.dataset.lang === lang ? '1' : '0.6';
+          link.style.fontWeight = link.dataset.lang === lang ? '700' : '400';
+        }
+      });
+
+      localStorage.setItem('mcmillen-lang', lang);
+    }
+
+    // Check saved language preference
+    const savedLang = localStorage.getItem('mcmillen-lang') || 'en';
+    setLanguage(savedLang);
+
+    langLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        setLanguage(link.dataset.lang);
+      });
+    });
+
+    // Mobile Menu Toggle
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      navToggle.textContent = mobileMenu.classList.contains('active') ? '✕' : '☰';
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        navToggle.textContent = '☰';
+      });
+    });
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#') {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+    // Form Submit
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const isZh = document.body.classList.contains('lang-zh');
+
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.style.opacity = '0.7';
+        }
+
+        const formData = new FormData(this);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: json
+        })
+          .then(async (response) => {
+            let resJson = await response.json();
+            if (response.status == 200) {
+              alert(isZh ? '感谢您的咨询，我们的团队将尽快与您联系。' : 'Thank you for your inquiry. Our team will contact you shortly.');
+              this.reset();
+            } else {
+              alert(resJson.message || "Error occurred");
+            }
+          })
+          .catch(error => {
+            alert(isZh ? "提交失败，请重试。" : "Submission failed, please try again.");
+          })
+          .then(() => {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.style.opacity = '1';
+            }
+          });
+      });
+    }
+  </script>
+</body>
+
+</html>

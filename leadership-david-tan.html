@@ -1,0 +1,575 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detailed biography of Dato' Seri David Tan, President of Mc Millen Group.">
+    <title>Dato' Seri David Tan - President | Mc Millen Group</title>
+
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --mcmillen-navy: #1e3a5f;
+            --swiss-blue: #003868;
+            --swiss-red: #E60000;
+            --text-dark: #1C1C1C;
+            --text-muted: #666666;
+            --text-light: #FFFFFF;
+            --bg-white: #FFFFFF;
+            --bg-pearl: #F5F5F5;
+            --bg-dark: #0a1628;
+            --nav-height: 80px;
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-strong: 0 20px 60px rgba(0, 56, 104, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-smooth);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Nav Copy from Index */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: #ffffff;
+            border-bottom: 1px solid #ddd;
+            height: var(--nav-height);
+            display: flex;
+            align-items: center;
+        }
+
+        .nav__container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav__logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav__logo img {
+            height: 80px;
+        }
+
+        .nav__logo-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--mcmillen-navy);
+        }
+
+        .nav__links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav__links a {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .nav__contact {
+            background: var(--mcmillen-navy);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Bio Section - Swiss Financial Style */
+        .bio-hero {
+            padding-top: calc(var(--nav-height) + 6rem);
+            padding-bottom: 6rem;
+            background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg-pearl) 100%);
+            min-height: 100vh;
+        }
+
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .bio-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0, 56, 104, 0.15);
+            border: 1px solid rgba(0, 56, 104, 0.08);
+            align-self: start;
+        }
+
+        .bio-image img {
+            transition: transform 0.6s ease;
+        }
+
+        .bio-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .name-title {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: none;
+            position: relative;
+        }
+
+        .name-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: var(--swiss-red);
+        }
+
+        .name-title h1 {
+            font-size: 3rem;
+            color: var(--mcmillen-navy);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        .name-title .title {
+            font-size: 0.95rem;
+            color: var(--mcmillen-navy);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0.8;
+        }
+
+        .bio-content p {
+            margin-bottom: 1.75rem;
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.9;
+            letter-spacing: 0.01em;
+        }
+
+        .bio-content p strong {
+            color: var(--mcmillen-navy);
+            font-weight: 600;
+        }
+
+        .bio-content .highlight {
+            padding: 2rem 2.5rem;
+            border-left: 4px solid var(--swiss-red);
+            background: rgba(30, 58, 95, 0.03);
+            font-style: italic;
+            color: var(--mcmillen-navy);
+            margin: 3rem 0;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            border-radius: 0 8px 8px 0;
+            font-weight: 500;
+        }
+
+        /* Section Styles */
+        .bio-section {
+            margin-bottom: 3.5rem;
+        }
+
+        .bio-section h2 {
+            font-size: 1.1rem;
+            color: var(--mcmillen-navy);
+            margin-bottom: 1.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .bio-section h2::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--swiss-red);
+            border-radius: 50%;
+        }
+
+        .bio-section h2::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, #ddd 0%, transparent 100%);
+        }
+
+        /* Page Header Title Section */
+        .page-header {
+            margin-bottom: 4rem;
+            text-align: left;
+            border-bottom: 2px solid var(--bg-pearl);
+            padding-bottom: 2rem;
+        }
+
+        .page-header h2 {
+            font-size: 2.25rem;
+            color: var(--mcmillen-navy);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .page-header h2::before {
+            content: '';
+            width: 40px;
+            height: 4px;
+            background: var(--swiss-red);
+        }
+
+        /* Footer */
+        .footer {
+            background: #0a0f1a;
+            color: #999;
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .footer-regulatory {
+            font-size: 0.75rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #666;
+        }
+
+        /* Language Switcher Logic */
+        .zh,
+        .zh-inline {
+            display: none !important;
+        }
+
+        body.lang-zh .en,
+        body.lang-zh .en-inline {
+            display: none !important;
+        }
+
+        body.lang-zh .zh {
+            display: block !important;
+        }
+
+        body.lang-zh .zh-inline {
+            display: inline !important;
+        }
+
+        .lang-dropdown {
+            position: relative;
+        }
+
+        .lang-btn {
+            background: #f7f9fb;
+            border: 1px solid #ddd;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lang-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            min-width: 150px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: var(--transition-smooth);
+        }
+
+        .lang-dropdown:hover .lang-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .lang-dropdown-menu a {
+            display: block;
+            padding: 0.8rem 1.2rem;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav__login {
+            background: transparent;
+            border: 1px solid var(--mcmillen-navy);
+            color: var(--mcmillen-navy);
+            padding: 0.6rem 1.2rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+        }
+
+        .nav__login:hover {
+            background: var(--mcmillen-navy);
+            color: #ffffff;
+        }
+
+        @media (max-width: 900px) {
+            .bio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bio-image {
+                position: relative;
+                top: 0;
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto 2rem;
+            }
+
+            .nav__links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="lang-en">
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav__container">
+            <a href="index.html" class="nav__logo">
+                <img src="assets/logo-blue.jpg" alt="Mc Millen Logo">
+                <div class="nav__logo-text">Mc Millen <span>World</span></div>
+            </a>
+            <ul class="nav__links">
+                <li><a href="index.html#about-group"><span class="en-inline">Group</span><span
+                            class="zh-inline">集团背景</span></a></li>
+                <li><a href="index.html#partners"><span class="en-inline">Partners</span><span
+                            class="zh-inline">战略合作</span></a></li>
+            </ul>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <div class="lang-dropdown">
+                    <button class="lang-btn">
+                        <span id="currentLang">Language</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </button>
+                    <div class="lang-dropdown-menu">
+                        <a href="#" data-lang="en">English (EN)</a>
+                        <a href="#" data-lang="zh">简体中文 (ZH)</a>
+                    </div>
+                </div>
+                <a href="index.html" class="nav__contact"><span class="en-inline">Back Home</span><span
+                        class="zh-inline">返回首页</span></a>
+                <a href="https://www.mcmillen.world" class="nav__login" id="memberLoginBtn" target="_blank"><span
+                        class="en-inline">Member Login</span><span class="zh-inline">会员登入</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="bio-hero">
+        <div class="container">
+            <header class="page-header">
+                <h2 class="en">President’s Message</h2>
+
+            </header>
+
+            <div class="bio-grid">
+                <aside class="bio-image">
+                    <img src="assets/david-tan-v2.jpg" alt="Dato' Seri David Tan">
+                </aside>
+
+                <article class="bio-content">
+                    <div class="name-title">
+                        <h1 class="en">Dato' Seri David Tan</h1>
+                        <h1 class="zh">拿督斯里陈泰圩</h1>
+                        <p class="title"><span class="en-inline">President of Mc Millen Group</span><span
+                                class="zh-inline">麦壳米伦集团总裁</span></p>
+                    </div>
+
+                    <!-- Updated Bio EN -->
+                    <div class="en">
+                        <div class="bio-section">
+                            <h2>The New Normal</h2>
+                            <p>Over the past few years, the global environment has continued to evolve. Geopolitical
+                                dynamics, economic cycles, and technological transformation have become increasingly
+                                interconnected, making uncertainty the new normal.</p>
+                            <p>Against this backdrop, Mc Millen Group has remained committed to a fundamental belief:
+                                true
+                                and enduring value can only be built on long-term vision, stability, and authenticity.
+                            </p>
+                        </div>
+
+                        <div class="bio-section">
+                            <h2>Our Foundation</h2>
+                            <p>Since its establishment, the Mc Millen Group has been firmly rooted in the real economy,
+                                actively participating in infrastructure development, real estate projects, and a number
+                                of
+                                landmark initiatives. At the same time, we have continued to expand into green
+                                sustainability, arts, technology, and healthcare. While diverse in nature, these
+                                business
+                                segments share a common purpose — <strong>the creation of genuine, long-term
+                                    value.</strong>
+                            </p>
+                            <p>As the Group's operations continue to deepen, it has become increasingly clear to us that
+                                finance should not be detached from the real economy, and that capital should serve
+                                sustainable, long-term development. It is under this philosophy that the Group's
+                                financial
+                                business has evolved into a core strategic pillar, and further led to the establishment
+                                and
+                                development of Mc Millen World, designed with a more professional, transparent, and
+                                robust
+                                governance framework to support the Group's future financial strategy.</p>
+                        </div>
+
+                        <div class="highlight">
+                            "Prudence, compliance, and responsibility must always take precedence over innovation."
+                        </div>
+
+                        <div class="bio-section">
+                            <h2>Future Vision</h2>
+                            <p>Looking ahead, Mc Millen Group will continue to advance the deep integration of the real
+                                economy, capital markets, and digital finance. We believe that technology—particularly
+                                artificial intelligence—will continue to reshape financial efficiency and risk
+                                management.
+                                However, regardless of how technology evolves, prudence, compliance, and responsibility
+                                must
+                                always take precedence over innovation.</p>
+                            <p>We do not pursue short-term trends, nor are we driven by market sentiment. Our long-term
+                                vision is to build an international platform with institutional governance,
+                                cross-regional
+                                collaboration, and sustainable growth capabilities across major global financial and
+                                economic hubs—enabling capital to flow, within a secure and transparent framework,
+                                towards
+                                opportunities that truly generate lasting value.</p>
+                            <p>Looking forward, Mc Millen Group will continue to anchor itself in stability, build upon
+                                professionalism, leverage technology as a tool, and uphold responsibility as its
+                                foundation—steadfastly pursuing a path of long-termism in an ever-changing world.</p>
+                        </div>
+                    </div>
+
+                    <!-- Updated Bio ZH -->
+                    <div class="zh">
+                        <div class="bio-section">
+                            <h2>时代的信念</h2>
+                            <p>过去数年，全球环境持续变化，地缘政治、经济周期与科技变革交织叠加，不确定性成为新常态。</p>
+                            <p>在这样的时代背景下，Mc Millen Group 始终坚持一个信念：真正有价值的事业，必须建立在长期、稳健与真实之上。</p>
+                        </div>
+
+                        <div class="bio-section">
+                            <h2>实体根基与金融深度</h2>
+                            <p>自成立以来，集团以实体经济为根基，深度参与基础设施建设、房地产及多项标志性项目，并持续布局绿色环保、可持续发展、艺术、科技与医疗健康等领域。这些板块背后共同指向一个核心——<strong>《真实价值的创造》</strong>。
+                            </p>
+                            <p>我们愈发清晰地认识到，金融不应脱离实体，资本更应服务长期发展。集团金融业务逐步成长为最具战略意义的核心板块，并进一步推动 Mc Millen World
+                                的设立，以更专业、更透明的架构，承载未来的金融布局。</p>
+                        </div>
+
+                        <div class="highlight">
+                            "科技将重塑金融的效率与风控方式；但无论技术如何演进，审慎、合规与责任感，始终应置于创新之前。"
+                        </div>
+
+                        <div class="bio-section">
+                            <h2>长期主义愿景</h2>
+                            <p>展望未来，Mc Millen Group
+                                将持续推进实体经济、资本市场与数字金融的深度融合。我们相信，科技，尤其是人工智能，将重塑金融的效率与风控方式；但无论技术如何演进，审慎、合规与责任感，始终应置于创新之前。
+                            </p>
+                            <p>我们不会追逐短期风口，也不会被市场情绪左右。集团的长期愿景，是在全球主要金融与经济枢纽中，构建一个具备制度化治理、跨区域协同与可持续增长能力的国际化平台，让资本在安全、透明的体系中，流向真正具备长期价值的方向。
+                            </p>
+                            <p>未来的 Mc Millen Group，将继续以稳健为本、以专业为基、以科技为工具、以责任为底线，在不断变化的世界中，坚定走在长期主义的道路上。</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-regulatory">Mc Millen World (麦壳米伦世界) is an independent financial platform under the Mc
+                Millen Group. All financial services are conducted in compliance with relevant regional regulations.</p>
+            <p style="font-size: 0.8rem;">&copy; 2026 Mc Millen World. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Language Switcher Script
+        const langBtn = document.querySelector('.lang-btn');
+        const langLinks = document.querySelectorAll('.lang-dropdown-menu a');
+        const langText = document.getElementById('currentLang');
+
+        function setLanguage(lang) {
+            if (lang === 'zh') {
+                document.body.classList.add('lang-zh');
+                langText.textContent = '简体中文';
+            } else {
+                document.body.classList.remove('lang-zh');
+                langText.textContent = 'English';
+            }
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        langLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = link.getAttribute('data-lang');
+                setLanguage(lang);
+            });
+        });
+
+        // Init language
+        const savedLang = localStorage.getItem('preferredLang') || 'en';
+        setLanguage(savedLang);
+    </script>
+</body>
+
+</html>
